@@ -3,6 +3,7 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 
+
 import config
 
 naming_convention = {
@@ -40,5 +41,8 @@ def create_app():
     # Filter
     from .filter import format_datetime
     app.jinja_env.filters['datetime'] = format_datetime
+
+    # Markdown
+
     return app
 
